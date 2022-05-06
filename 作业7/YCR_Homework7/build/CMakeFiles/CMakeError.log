@@ -1,0 +1,35 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/cs18/Desktop/PA7/Assignment7/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_90677/fast"
+/usr/bin/make -f CMakeFiles/cmTC_90677.dir/build.make CMakeFiles/cmTC_90677.dir/build
+make[1]: Entering directory '/home/cs18/Desktop/PA7/Assignment7/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_90677.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_90677.dir/CheckSymbolExists.c.o   -c /home/cs18/Desktop/PA7/Assignment7/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_90677
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_90677.dir/link.txt --verbose=1
+/usr/bin/cc      CMakeFiles/cmTC_90677.dir/CheckSymbolExists.c.o  -o cmTC_90677 
+CMakeFiles/cmTC_90677.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_90677.dir/build.make:97: recipe for target 'cmTC_90677' failed
+make[1]: *** [cmTC_90677] Error 1
+make[1]: Leaving directory '/home/cs18/Desktop/PA7/Assignment7/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_90677/fast' failed
+make: *** [cmTC_90677/fast] Error 2
+
+File /home/cs18/Desktop/PA7/Assignment7/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
