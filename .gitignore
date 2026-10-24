@@ -1,0 +1,26 @@
+# CMake and compiler outputs
+**/build/
+**/cmake-build-*/
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+compile_commands.json
+**/Makefile
+*.exe
+*.out
+*.o
+*.obj
+*.a
+*.so
+*.dll
+
+# Archive metadata
+__MACOSX/
+.DS_Store
+
+# Generated logs
+*.log
+
+# Temporary downloads used while assembling the template archive
+/hw3.zip
+/hw8.zip
