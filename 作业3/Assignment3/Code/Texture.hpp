@@ -24,9 +24,12 @@ public:
 
     Eigen::Vector3f getColor(float u, float v)
     {
-        auto u_img = u * width;
-        auto v_img = (1 - v) * height;
-        auto color = image_data.at<cv::Vec3b>(v_img, u_img);
+        u = std::fmin(1.0f, std::fmax(u, 0.0f));
+        v = std::fmin(1.0f, std::fmax(v, 0.0f));
+
+        const int u_img = static_cast<int>(u * (width - 1));
+        const int v_img = static_cast<int>((1.0f - v) * (height - 1));
+        const auto color = image_data.at<cv::Vec3b>(v_img, u_img);
         return Eigen::Vector3f(color[0], color[1], color[2]);
     }
 

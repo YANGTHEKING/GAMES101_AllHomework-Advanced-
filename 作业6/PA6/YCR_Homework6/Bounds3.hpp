@@ -106,7 +106,7 @@ inline bool Bounds3::IntersectP(const Ray& ray, const Vector3f& invDir) const
     float ten, tex;
     tex = fmin(tmax.x, fmin(tmax.y, tmax.z));
     ten = fmax(tmin.x, fmax(tmin.y, tmin.z));
-    if(ten < tex && ten > 0)
+    if(ten < tex && tex > 0)
         return true;
     return false;
 }
